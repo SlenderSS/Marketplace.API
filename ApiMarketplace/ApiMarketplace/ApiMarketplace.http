@@ -1,0 +1,6 @@
+@ApiMarketplace_HostAddress = http://localhost:5063
+
+GET {{ApiMarketplace_HostAddress}}/api/users/
+Accept: application/json
+
+###
