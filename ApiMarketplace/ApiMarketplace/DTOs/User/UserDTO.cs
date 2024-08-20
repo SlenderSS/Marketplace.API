@@ -1,7 +1,6 @@
-﻿
-using ApiMarketplace.Models;
+﻿using ApiMarketplace.Models;
 
-namespace ApiMarketplace.DTOs
+namespace ApiMarketplace.DTOs.User
 {
     public class UserDTO
     {
