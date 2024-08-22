@@ -14,10 +14,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-string connection = builder.Configuration.GetConnectionString("Default");
 
 
-builder.Services.AddDbContext<MarketplaceContext>(options => options.UseSqlServer(connection));
+
+builder.Services.AddDbContext<MarketplaceContext>();
 // Repositories
 builder.Services.AddScoped<IBaseRepository<Basket>, BaseRepository<Basket>>();
 builder.Services.AddScoped<IBaseRepository<BasketItem>, BaseRepository<BasketItem>>();

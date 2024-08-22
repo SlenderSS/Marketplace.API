@@ -26,7 +26,7 @@ namespace ApiMarketplace.Controllers
   
 
         [HttpGet("{id}")]
-        public virtual async Task<ActionResult> GetByIdAsync(Guid id)
+        public virtual async Task<ActionResult> GetByIdAsync(long id)
         {
             TEntity item = await _service.GetByIdAsync(id);
             if (item == null)
@@ -51,7 +51,7 @@ namespace ApiMarketplace.Controllers
         }
 
         [HttpDelete("{id}")]
-        public virtual async Task<ActionResult> DeleteAsync(Guid id)
+        public virtual async Task<ActionResult> DeleteAsync(long id)
         {
             await _service.DeleteAsync(id);
             return NoContent();

@@ -2,8 +2,8 @@
 {
     public class BlackListDTO
     {
-        public Guid Id { get; set; }
-        public Guid UserId { get; set; }
+        public long Id { get; set; }
+        public long UserId { get; set; }
         public string Reason { get; set; }
         public DateTime CreatedAt { get; set; }
     }

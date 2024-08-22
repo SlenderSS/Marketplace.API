@@ -15,7 +15,7 @@ namespace ApiMarketplace.Services
             // Фільтрування
             if (parameters.manufacturerId.HasValue)
             {
-                filteredProducts = filteredProducts.Where(p => p.Manufacturer.Id==parameters.manufacturerId);
+                filteredProducts = filteredProducts.Where(p => p.Manufacturer.Id == parameters.manufacturerId);
             }
 
             if (!string.IsNullOrEmpty(parameters.name))

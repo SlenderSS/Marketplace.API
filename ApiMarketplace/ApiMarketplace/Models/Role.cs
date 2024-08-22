@@ -1,6 +1,8 @@
-﻿namespace ApiMarketplace.Models
+﻿using CSharpFunctionalExtensions;
+
+namespace ApiMarketplace.Models
 {
-    public class Role : BaseEntity
+    public class Role : Entity
     {
         public string Name { get; set; }
         public string Description { get; set; }

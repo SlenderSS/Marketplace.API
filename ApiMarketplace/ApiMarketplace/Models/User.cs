@@ -1,15 +1,16 @@
 ﻿using System.Data;
+using CSharpFunctionalExtensions;
 
 namespace ApiMarketplace.Models
 {
-    public class User:BaseEntity
+    public class User: Entity
     {
         public string Name { get; set; }
-        public required string Email { get; set; }
-        public required string Password { get; set; }
-        public Guid RoleId { get; set; }
+        public string Email { get; set; }
+        public string Password { get; set; }
+        public long RoleId { get; set; }
         public Role Role { get; set; }
-        public Guid BasketId { get; set; }
+        public long BasketId { get; set; }
         public Basket Basket { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }

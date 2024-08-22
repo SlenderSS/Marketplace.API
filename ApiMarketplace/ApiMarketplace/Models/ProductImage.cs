@@ -1,9 +1,11 @@
-﻿namespace ApiMarketplace.Models
+﻿using CSharpFunctionalExtensions;
+
+namespace ApiMarketplace.Models
 {
-    public class ProductImage:BaseEntity
+    public class ProductImage: Entity
     {
-        public required Guid ProductId { get; set; }
-        public required string ImageUrl { get; set; }
-        public required Product Product { get; set; }
+        public long ProductId { get; set; }
+        public string ImageUrl { get; set; }
+        public Product Product { get; set; }
     }
 }

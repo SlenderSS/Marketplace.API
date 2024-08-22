@@ -1,8 +1,10 @@
-﻿namespace ApiMarketplace.Models
+﻿using CSharpFunctionalExtensions;
+
+namespace ApiMarketplace.Models
 {
-    public class Order : BaseEntity
+    public class Order : Entity
     {
-        public Guid UserId { get; set; }
+        public long UserId { get; set; }
         public User User { get; set; }
         public decimal TotalAmount { get; set; }
         public string Status { get; set; }

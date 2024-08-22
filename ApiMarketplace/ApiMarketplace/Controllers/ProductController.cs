@@ -1,4 +1,4 @@
-﻿using ApiMarketplace.DTOs;
+﻿using ApiMarketplace.DTOs.Product;
 using ApiMarketplace.Helpers;
 using ApiMarketplace.Models;
 using ApiMarketplace.Repository.Interface;

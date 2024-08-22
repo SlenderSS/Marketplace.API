@@ -1,8 +1,10 @@
-﻿namespace ApiMarketplace.Models
+﻿using CSharpFunctionalExtensions;
+
+namespace ApiMarketplace.Models
 {
-    public class Manufacturer : BaseEntity
+    public class Manufacturer : Entity
     {
-        public required string Name { get; set; }
+        public string Name { get; set; }
         public ICollection<Product>? Products { get; set; }
     }
 }

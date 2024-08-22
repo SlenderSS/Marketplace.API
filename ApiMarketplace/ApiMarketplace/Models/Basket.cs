@@ -1,8 +1,10 @@
-﻿namespace ApiMarketplace.Models
+﻿using CSharpFunctionalExtensions;
+
+namespace ApiMarketplace.Models
 {
-    public class Basket : BaseEntity
+    public class Basket : Entity
     {
-        public Guid UserId { get; set; }
+        public long UserId { get; set; }
         public User User { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }

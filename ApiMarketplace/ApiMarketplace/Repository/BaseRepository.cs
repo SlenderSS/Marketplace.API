@@ -1,11 +1,13 @@
-﻿using ApiMarketplace.Models;
+﻿using ApiMarketplace.Helpers;
+using ApiMarketplace.Models;
 using ApiMarketplace.Repository.Interface;
+using CSharpFunctionalExtensions;
 using Microsoft.EntityFrameworkCore;
-using System.Linq.Expressions;
+
 
 namespace ApiMarketplace.Repository
 {
-    public  class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : BaseEntity
+    public class BaseRepository<TEntity> : IBaseRepository<TEntity> where TEntity : Entity
     {
         protected readonly MarketplaceContext _context;
 
@@ -14,8 +16,28 @@ namespace ApiMarketplace.Repository
             _context = context;
         }
 
-        public async Task<TEntity> GetByIdAsync(Guid id) => await BuildQuery().FirstOrDefaultAsync(entity => entity.Id == id);
-        public async Task<IEnumerable<TEntity>> GetAllAsync() => await BuildQuery().ToListAsync();
+        public async Task<TEntity> GetByIdAsync(long id)
+        {
+            return await _context
+                .Set<TEntity>()
+                .FirstOrDefaultAsync(entity => entity.Id == id);
+        }
+
+        public Task<TEntity> GetByNameAsync(string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<IEnumerable<TEntity>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public async Task<IEnumerable<TEntity>> GetAllAsync(FilterSortParameters filter)
+        {
+            return await _context.Set<TEntity>().ToListAsync();
+
+        }
 
         public virtual async Task<TEntity> AddAsync(TEntity entity)
         {
@@ -31,7 +53,7 @@ namespace ApiMarketplace.Repository
             return entity;
         }
 
-        public virtual async Task<bool> DeleteAsync(Guid id)
+        public virtual async Task<bool> DeleteAsync(long id)
         {
             var entity = await _context.Set<TEntity>().FindAsync(id);
             if (entity == null)
@@ -43,6 +65,12 @@ namespace ApiMarketplace.Repository
             await _context.SaveChangesAsync();
             return true;
         }
+
+        public Task<bool> EntityExists(long id)
+        {
+            throw new NotImplementedException();
+        }
+
         public virtual IQueryable<TEntity> BuildQuery()
         {
             return _context.Set<TEntity>().AsQueryable();
