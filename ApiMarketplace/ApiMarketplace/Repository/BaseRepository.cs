@@ -1,4 +1,5 @@
-﻿using ApiMarketplace.Helpers;
+﻿using ApiMarketplace.Database;
+using ApiMarketplace.Helpers;
 using ApiMarketplace.Models;
 using ApiMarketplace.Repository.Interface;
 using CSharpFunctionalExtensions;

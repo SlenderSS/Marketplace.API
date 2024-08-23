@@ -1,3 +1,4 @@
+using ApiMarketplace.Database;
 using ApiMarketplace.Models;
 using ApiMarketplace.Repository;
 using ApiMarketplace.Repository.Interface;
