@@ -20,7 +20,7 @@ namespace ApiMarketplace.Services
 
             if (!string.IsNullOrEmpty(parameters.name))
             {
-                filteredProducts = filteredProducts.Where(p => p.Name.Contains(parameters.name));
+                filteredProducts = filteredProducts.Where(p => p.Title.Contains(parameters.name));
             }
 
             if (parameters.sellerId.HasValue)

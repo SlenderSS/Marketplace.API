@@ -18,6 +18,6 @@ namespace ApiMarketplace.Models
         public ICollection<Order>? Orders { get; set; }
         public ICollection<Review>? Reviews { get; set; }
         public ICollection<Product>? Products { get; set; }
-        public ICollection<BlackList>? BlackLists { get; set; }
+
     }
 }

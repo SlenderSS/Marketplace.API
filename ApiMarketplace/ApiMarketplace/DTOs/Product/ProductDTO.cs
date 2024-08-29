@@ -13,7 +13,7 @@ namespace ApiMarketplace.DTOs.Product
         public ProductDTO(Models.Product product)
         {
             Id = product.Id;
-            Name = product.Name;
+            Name = product.Title;
             Description = product.Description;
             Price = product.Price;
             CategoryId = product.CategoryId;
